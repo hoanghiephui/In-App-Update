@@ -11,7 +11,7 @@ import com.google.android.play.core.review.ReviewManagerFactory
  * An interface that defines a contract for launching the In-App Review flow for an app.
  */
 @Stable
-interface InAppReviewManager {
+public interface InAppReviewManager {
     /**
      * Launches the In-App Review flow for the given [activity].
      *
@@ -22,7 +22,7 @@ interface InAppReviewManager {
      * Review flow fails. If no implementation is provided for this parameter, the exception will be logged
      * and a toast message will be shown to the user.
      */
-    fun launchReviewFlow(
+    public fun launchReviewFlow(
         activity: Activity,
         onReviewRequestSuccess: () -> Unit = {},
         onReviewRequestFail: (exception: Exception?) -> Unit = {},
@@ -35,7 +35,7 @@ interface InAppReviewManager {
  * @return An instance of [InAppReviewManager].
  */
 @Composable
-fun rememberInAppReviewManager(): InAppReviewManager {
+public fun rememberInAppReviewManager(): InAppReviewManager {
     // Get the application context using the LocalContext.current
     val applicationContext = LocalContext.current.applicationContext
 

@@ -7,10 +7,10 @@ import com.google.android.play.core.ktx.AppUpdateResult
 import kotlinx.coroutines.launch
 
 // Try launch update in another way
-const val APP_UPDATE_REQUEST_CODE = 86500
+public const val APP_UPDATE_REQUEST_CODE: Int = 86500
 
 @Composable
-fun RequireLatestVersion(content: @Composable () -> Unit) {
+public fun RequireLatestVersion(content: @Composable () -> Unit) {
     val inAppUpdateState = rememberInAppUpdateState()
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
