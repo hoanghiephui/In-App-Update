@@ -9,7 +9,7 @@ import com.google.android.play.core.review.ReviewManager
  *
  * @property reviewManager An instance of [ReviewManager] that will be used to launch the In-App Review flow.
  */
-internal class DefaultInAppReviewManager constructor(
+internal class DefaultInAppReviewManager(
     private val reviewManager: ReviewManager
 ) : InAppReviewManager {
 
