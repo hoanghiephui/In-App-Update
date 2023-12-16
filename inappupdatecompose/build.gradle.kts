@@ -28,7 +28,7 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.0"
+        kotlinCompilerExtensionVersion = "1.5.3"
     }
 
     kotlinOptions {
@@ -62,7 +62,7 @@ kotlin {
 
 dependencies {
 
-    val composeBom = platform("androidx.compose:compose-bom:2023.06.01")
+    val composeBom = platform("androidx.compose:compose-bom:2023.10.01")
     implementation(composeBom)
     androidTestImplementation(composeBom)
 
@@ -70,17 +70,17 @@ dependencies {
 
     val coroutineVersion = "1.7.1"
 
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:$coroutineVersion")
+    api("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:$coroutineVersion")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutineVersion")
 
     implementation("androidx.compose.runtime:runtime")
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.material:material")
 
-    implementation(platform("com.google.android.play:core:1.10.3"))
-    implementation("androidx.core:core-ktx:1.10.1")
+    api(platform("com.google.android.play:core:1.10.3"))
+    implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.9.0")
+    implementation("com.google.android.material:material:1.11.0")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
