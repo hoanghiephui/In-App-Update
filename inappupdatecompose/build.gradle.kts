@@ -66,7 +66,10 @@ dependencies {
     implementation(composeBom)
     androidTestImplementation(composeBom)
 
-    api("com.google.android.play:core-ktx:1.8.1")
+    api("com.google.android.play:app-update:2.1.0")
+    api("com.google.android.play:app-update-ktx:2.1.0")
+    api("com.google.android.play:review:2.0.1")
+    api("com.google.android.play:review-ktx:2.0.1")
 
     val coroutineVersion = "1.7.1"
 
@@ -77,7 +80,6 @@ dependencies {
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.material:material")
 
-    api(platform("com.google.android.play:core:1.10.3"))
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.11.0")
