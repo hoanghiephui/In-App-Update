@@ -14,7 +14,6 @@ import com.google.android.play.core.ktx.AppUpdateResult
 import com.google.android.play.core.ktx.requestUpdateFlow
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.catch
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 @Composable
@@ -43,11 +42,16 @@ internal class MutableInAppUpdateState(
 
     init {
         scope.launch {
-            appUpdateManager.requestUpdateFlow().catch { e ->
-                Log.e("error", "", e)
-            }.collect {
-                _appUpdateResult = it
+            try {
+                appUpdateManager.requestUpdateFlow().catch { e ->
+                    Log.e("error", "", e)
+                }.collect {
+                    _appUpdateResult = it
+                }
+            } catch (ex: Exception) {
+                Log.e("error", "", ex)
             }
+
         }
     }
 }
