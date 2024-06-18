@@ -3,6 +3,7 @@ plugins {
     id("kotlin-android")
     id("maven-publish")
     id("signing")
+    alias(libs.plugins.compose.compiler)
 }
 
 android {
@@ -25,10 +26,6 @@ android {
     buildFeatures {
         viewBinding = true
         compose = true
-    }
-
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.14"
     }
 
     kotlinOptions {
@@ -71,7 +68,7 @@ dependencies {
     api("com.google.android.play:review:2.0.1")
     api("com.google.android.play:review-ktx:2.0.1")
 
-    val coroutineVersion = "1.7.1"
+    val coroutineVersion = "1.8.1"
 
     api("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:$coroutineVersion")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutineVersion")
@@ -80,9 +77,9 @@ dependencies {
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.material:material")
 
-    implementation("androidx.core:core-ktx:1.12.0")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.11.0")
+    implementation("androidx.core:core-ktx:1.13.1")
+    implementation("androidx.appcompat:appcompat:1.7.0")
+    implementation("com.google.android.material:material:1.12.0")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
